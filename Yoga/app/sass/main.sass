@@ -1,0 +1,736 @@
+@import "mixins"
+@import "fonts"
+@import "libs"
+@import "vars"
+
+
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html
+	min-height: 100%
+	display: flex
+	flex-direction: column
+
+body
+	font-size: 14px
+	min-width: 320px
+	position: relative
+	display: flex
+	flex-direction: column
+	flex: auto
+	line-height: 22px
+	letter-spacing: 0.15px
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text-body
+	opacity: 1
+	background-color: pink
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+h1,h2,h3,h4,h5,h6,p 
+	margin: 0
+	padding: 0
+a
+	text-decoration: underline
+
+.wrapper
+	width: 100%
+	max-width: 1170px
+	min-width: 320px
+	margin: 0 auto
+
+header
+	position: relative	
+	.header_top
+		background-color: #fff
+		height: 98px
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		.top_line
+			display: flex
+			justify-content: space-around
+			box-sizing: border-box
+			.logo
+				justify-content: center
+				flex-direction: column
+				align-items: center
+				.logo_img
+					width: 67px
+					height: 42px
+					display: inline-block
+
+			.header_item
+				width: 33.33%
+				display: flex
+			.header_l
+				justify-content: flex-end
+			.header_r
+				justify-content: flex-start
+
+			.ul_list
+				display: flex
+				flex-wrap: wrap
+				align-items: center
+				a
+					text-decoration: none
+
+				li
+					margin-left: 31px
+					&:first-child
+						margin-left: 0
+
+				li:hover a
+					color: $accent
+					transition: all 1s easy-in-out
+					&:after
+						content: ""
+						display: block
+						width: 50%
+						height: 2px
+						transform: translate(50%)
+						background-color: $accent
+						transition: all 1s easy-in-out
+
+			.list-r
+				margin-left: -5px
+				li
+					margin-right: 30px
+
+	.header_slider
+		position: relative
+		height: 600px
+		background-position: top center
+		background-size: cover
+		&:after
+			content: ""
+			position: absolute
+			background-color: $accent
+			top: 0
+			right: 0
+			left: 0
+			bottom: 0
+			opacity: 0.8
+
+		.wrapper
+			display: flex
+			height: 100%
+			align-items: center
+			justify-content: space-between
+			padding-left: 245px
+			box-sizing: border-box
+			flex-wrap: wrap
+		.item
+			width: 50%
+		.header_form
+			position: relative
+			z-index: 2
+			box-sizing: border-box
+			width: 300px
+			padding: 40px 30px
+			background-color: #FFF
+			+br(20px)
+			h3
+				color: $accent
+				font-size: 25px
+				margin-bottom: 31px
+			input,
+			.selectize-input
+				height: 50px
+				line-height: 50px
+				background-color: #f2f2f2
+				width: 100%
+				border: none
+				+br(8px)
+				margin-bottom: 17px
+				padding: 0 10px
+				box-sizing: border-box
+				&:focus
+					outline: none
+			input[type="submit"]
+				width: 170px
+				box-shadow: (2px 2px 5px rgba(0,0,0,.15))
+				background-color: $accent
+				font-family: "OpenSansBold", sans-serif
+				font-size: 16px
+				color: #fff
+				margin: 17px -5px 0 0 
+			.button_wrap
+				text-align: right
+
+		.header_cont
+			position: relative
+			z-index: 2
+			color: #fff
+			h1
+				font-size: 48px
+				line-height: 72px
+				text-transform: uppercase
+			h4
+				font-size: 40px
+				font-family: freestyle
+				margin-top: 23px
+				line-height: 43px
+
+	.selectize-control.single .selectize-input
+		background-image: none
+		background-color: #f2f2f2
+	.selectize-input 
+		border: none
+		padding: 0px 8px
+		margin-bottom: 0 !important
+	.selectize-control.single .selectize-input.input-active,
+	.selectize-input
+		background-color: #f2f2f2
+
+.yoga
+	padding: 126px 0 104px 0
+	background-color: #FFF
+	h2
+		margin-bottom: 31px
+		font-size: 30px
+		color: $accent
+		font-family: "OpenSansBold", sans-serif
+		text-transform: uppercase
+		text-align: center
+	&_p
+		text-align: center
+		font-size: 40px
+		font-family: freestyle
+		margin-bottom: 76px
+	&_wrap
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+		flex-wrap: wrap
+		.yoga_cont
+			width: 50%
+			background-color: #FFF
+			padding: 50px 30px
+			h3
+				margin-bottom: 35px
+			p
+				margin-bottom: 17px
+			
+		.yoga_bl
+			display: flex
+			flex-direction: row
+			justify-content: center 
+			margin-bottom: 20px
+			flex: 0 1 calc(50% - 21px * 3/4)
+			.img_wrap
+				width: 100%
+				max-width: 269px
+				background: url(../img/yoga/1.jpg) top right
+				background-repeat: no-repeat
+				background-size: cover
+
+.gallery
+	ul
+		display: flex
+		flex-direction:row
+		flex-wrap: wrap
+	li
+		position: relative
+		width: 25%
+		height: 350px
+		overflow: hidden
+		transition: all 1s easy-in-out
+		&:hover .gallery_wrap
+			transform: translateY(0%)
+			cursor: pointer
+			transition: all 1s easy-in-out
+
+		img
+			width: 100%
+			display: block
+			height: 100%
+
+	&_wrap
+		position: absolute
+		background-color: rgba($accent, .9)
+		
+		left: 0
+		right: 0
+		top: 0
+		bottom: 0
+		display: flex
+		justify-content: center
+		align-items: center
+		transition: transform 0.3s ease-in
+		transform: translateY(100%)
+		span
+			background-color: #FFF
+			font-size: 36px
+			width: 60px
+			height: 60px
+			text-align: center
+			line-height: 60px
+			position: relative
+			overflow: hidden
+			+br(50%)
+			&:after
+				content: ''
+				position: absolute
+				background: url(../img/spritesheet.png) no-repeat
+				background-position: -5px -8px
+				width: 100%
+				height: 100%
+				margin-left: -11px
+				overflow: hidden
+
+
+
+.about_us
+	background-color: #fff
+	padding: 120px 0 127px 0 
+	.flx
+		display: flex
+		flex-direction: row
+
+	.descr,
+	.sl_container
+		width: 50%
+	.descr
+		padding-right: 100px
+		box-sizing: border-box
+	.owl-carousel
+		img
+			max-height: 100%
+	.slide-item
+		width: 570px
+		height: 300px
+
+	h2
+		margin-top: 25px
+		font-size: 30px
+		color: $accent
+		font-family: "OpenSansBold", sans-serif
+		margin-bottom: 30px
+	p
+		font-size: 14px
+
+
+
+.features
+	position: relative
+	min-height: 800px
+	padding-top: 124px
+	padding-bottom: 84px
+	box-sizing: border-box
+	background-size: cover
+	background-position: center top
+	color: #fff
+	&:after
+		content: ""
+		position: absolute
+		background-color: $accent
+		top: 0
+		right: 0
+		left: 0
+		bottom: 0
+		opacity: .8
+	.wrapper
+		display: flex
+		flex-direction: column
+		height: 100%
+		justify-content: center
+		&:first-child .feature_blk
+			padding-bottom: 58px
+		.feature_blk
+			display: flex
+			flex-direction: row
+			justify-content: space-between
+			flex-wrap: wrap
+		.feature_item
+			position: relative
+			z-index: 2
+			display: flex
+			align-items: center
+			flex-direction: column
+			width: 23%
+			flex-grow: 1
+			padding: 0 9px
+			text-align: center
+			flex-basis: 240px
+
+
+		.feture-1,
+		.feture-2,
+		.feture-3,
+		.feture-4,
+		.feture-5,
+		.feture-6,
+		.feture-7,
+		.feture-8
+        	fill: #fff
+		.feture-1
+			width: 39px
+			height: 31px
+		.feture-2
+			width: 43px
+			height: 25px
+		.feture-3
+			width: 48px
+			height: 53px
+		.feture-4
+			width: 34px
+			height: 34px
+		.feture-5
+			width: 40px
+			height: 40px
+		.feture-6
+			width: 19px
+			height: 51px
+		.feture-7
+			width: 49px
+			height: 33px
+		.feture-8
+			width: 28px
+			height: 36px
+		.feature_img
+			width: 70px
+			height: 70px
+			display: flex
+			align-items: center
+			justify-content: center
+			border: 2px solid #fff
+			border-radius: 50%
+			margin-bottom: 33px
+  
+		.feature_title
+			font-size: 18px
+			font-family: "OpenSansBold", sans-serif
+			margin-bottom: 25px
+			text-transform: uppercase
+			flex-grow: 1
+			padding: 0 40px
+		.feature_text
+			font-size: 16px
+
+
+.price
+	padding: 100px 0
+	background-color: #fff
+	background: url(../img/price/backg_img.png) 860px 560px
+	background-repeat: no-repeat
+	background-color: rgba(255,255,255, 0.8)
+	.wrapper
+		.trainer
+			background-color: #FFF
+			.owl-dots
+				position: absolute
+				right: -60px
+				top: 50%
+				transform: translateY(-50%)
+
+				.owl-dot
+					position: relative
+					display: block
+					width: 20px
+					height: 20px
+					border: 2px solid #d7d7d7
+					border-radius: 50%
+					margin-bottom: 18px
+					&.active
+						border: 2px solid #5b6ceb
+					&.active:after
+						content: ''
+						display: block
+						position: absolute
+						top: 3px
+						right: 3px
+						bottom: 3px
+						left: 3px
+						background-color: #5b6ceb
+						+br(50%)
+					
+
+			&_text
+				font-family: "OpenSansItalic", sans-serif
+				font-style: italic
+				margin-bottom: 37px
+			&_person
+				span
+					display: block
+					font-size: 14px
+				&__name
+
+					color: $accent
+					font-size: 16px
+					font-family: "OpenSansBold", sans-serif
+					font-weight: bold
+
+			&_slider
+				&__descr
+					padding-left: 41px
+					padding-right: 79px
+					p
+						min-height: 88px
+				&__item
+					display: flex
+					padding: 37px 150px 0 62px
+
+			&_next
+				margin-top: 40px
+				display: flex
+				align-items: center
+				padding-left: 55px
+				margin-bottom: -35px
+				span
+					display: block
+					font-size: 12px
+				.gr
+					font-family: "OpenSansBold", sans-serif
+					font-size: 14px
+					color: #555
+					font-weight: bold
+
+				&__person
+					position: relative
+					display: inline-table
+					margin-right: 12px
+					border: 2px solid #d7d7d7
+					padding: 3px
+					background-color: #FFF
+					+br(50%)
+				&__avatar
+					width: 67px
+					height: 67px
+					background: url(../img/price/trainer_next1.jpg)
+					background-position: top
+					+br(50%)
+				&__name
+
+
+
+			
+			.person_avatar
+				position: relative
+				display: inline-table
+				border: 2px solid #d7d7d7
+				padding: 10px
+				+br(50%)
+				&:before
+					content: ''
+					height: 75px
+					width: 2px
+					color: #d7d7d7
+					position: absolute
+					right: 20px
+
+				.person_img
+					width: 147px
+					height: 147px
+					background: url(../img/price/trainer_img1.jpg)
+					background-position: center top
+					+br(50%)
+
+
+		.price_bl
+			display: flex
+			justify-content: space-between
+			flex-wrap: wrap
+			margin-bottom: 105px
+
+		.price_item
+			width: calc(33.33% - 21px)
+			text-align: center
+			display: flex
+			flex-direction: column
+			box-shadow: (6px 6px 50px rgba(0,0,0,.1))
+			+br(10px)
+			&:hover .button
+				background-color: #5beba2
+
+			.price_wrap
+				padding: 50px 0
+				background-color: $accent
+				font-family: "OpenSansBold", sans-serif
+				font-weight: bold
+				display: flex
+				justify-content: center
+				color: #fff
+			.value
+				font-size: 32px
+				align-self: center
+		
+			.price_number
+				font-size: 64px
+				line-height: 50px
+				margin-right: 7px
+				margin-left: 22px
+
+			.period
+				font-size: 18px
+				align-self: flex-end
+
+			.price_text
+				padding-top: 50px
+				flex-grow: 1
+				background-color: #FFF
+			p
+				margin-bottom: 45px
+				font-size: 18px
+			.btn_wrap
+				background-color: #FFF
+				padding-bottom: 50px
+			.button
+				width: 170px
+				height: 49px
+				line-height: 49px
+				background-color: $accent
+				+br(16px)
+				border: none
+				color: #fff
+				font-size: 18px
+
+
+
+
+footer
+	background-color: $accent
+	color: #fff
+	font-size: 14px
+	a,
+	i
+		display: inline-block
+		background: url('../img/spritesheet.png') no-repeat
+	i
+		margin-right: 13px
+
+	.item
+		width: calc(50% - 82px)
+
+	.footer_bot
+		height: 100px
+		color: #fff
+		background-color: #5363d8
+		.wrapper
+			display: flex
+			justify-content: center
+			align-items: center
+			height: 100%
+	.footer_telephone
+		span
+			display: block
+	.contact_wrap
+
+
+		.sprite-location
+			background-position: -5px -203px
+			width: 21px
+			height: 21px
+		.sprite-phone-call
+			background-position: -5px -99px
+			width: 21px
+			height: 21px
+		.sprite-mail
+			background-position: -5px -81px
+			width: 21px
+			height: 13px
+		.sprite-planet
+			background-position: -5px -125px
+			width: 21px
+			height: 21px
+
+		.contact_top,
+		.contact_bot
+			display: flex
+			justify-content: space-between
+			align-items: flex-start
+		.contact_top
+			margin-bottom: 25px
+		.contact_column
+			width: 50%
+			display: flex
+			align-items: center
+
+		.contact_flex
+			display: flex
+			align-items: center
+	& > .wrapper
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+		padding-top: 100px
+		padding-bottom: 100px
+		.footer_about
+			p
+				margin-bottom: 72px
+	h4
+		font-family: "OpenSansBold", sans-serif
+		font-size: 18px
+		text-transform: uppercase
+		margin-bottom: 60px
+
+	.footer_ic
+		.sprite-pinterest
+			background-position: -5px -177px
+			width: 17px
+			height: 21px
+			margin-right: 17px
+		.sprite-twitter
+			background-position: -5px -0px
+			width: 25px
+			height: 21px
+			margin-right: 19px
+		.sprite-facebook
+			background-position: -5px -229px
+			width: 13px
+			height: 21px
+			margin-right: 22px
+		.sprite-google-plus
+			background-position: -5px -151px
+			width: 19px
+			height: 21px
+			margin-right: 17px
+		.sprite-instagram
+			background-position: -5px -55px
+			width: 21px
+			height: 21px
+
+
+
+
+
+
+
+
+ul
+	@extend .list
+	a
+		color: $text-body
+
+
+
+
+@import "media" // Всегда в конце
+
